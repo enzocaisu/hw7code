@@ -33,9 +33,3 @@
         (node #f #f)
     )
 )
-
-(define add
-    (lambda (p which c)
-        (set! (if which (left p) (right p)) (deref c))
-    )
-)
