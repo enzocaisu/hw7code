@@ -19,8 +19,7 @@ public class Reader {
 	Program parse(String programText) {
 		RefLangLexer l = new RefLangLexer(new org.antlr.v4.runtime.ANTLRInputStream(programText));
 		RefLangParser p = new RefLangParser(new org.antlr.v4.runtime.CommonTokenStream(l));
-		Program program = p.program().ast;
-		return program;
+		return p.program().ast;
 	}
 	
 	static String readFile(String fileName) throws IOException {
@@ -47,7 +46,7 @@ public class Reader {
 	
 	private String runFile(String programText) throws IOException {
 		if(programText.startsWith("run ")){
-			programText = readFile("build/reflang/examples/" + programText.substring(4));
+			programText = readFile("reflang/src/main/java/Example/" + programText.substring(4));
 		}
 		return programText; 
 	}
