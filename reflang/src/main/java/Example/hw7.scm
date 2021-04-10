@@ -43,3 +43,5 @@
         (set! (if which (left root) (right root)) child)
     )
 )
+
+(define root (node 1))
