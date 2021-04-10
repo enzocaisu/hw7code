@@ -2,7 +2,7 @@ package reflang;
 import java.io.IOException;
 
 import reflang.Env;
-import reflang.Value;
+import reflang.Value.*;
 import reflang.AST.*;
 
 /**
@@ -13,6 +13,8 @@ import reflang.AST.*;
  *
  */
 public class Interpreter {
+	private static Object RefVal;
+
 	public static void main(String[] args) {
 		System.out.println("RefLang: Type a program to evaluate and press the enter key,\n" + 
 				"e.g. (ref 1) \n" +
@@ -26,6 +28,7 @@ public class Interpreter {
 				p = reader.read();
 				if(p._e == null) continue REPL;
 				Value val = eval.valueOf(p);
+				//if(val.getClass().equals(RefVal)) System.out.println("Test: "+ val);
 				printer.print(val);
 			} catch (Env.LookupException e) {
 				printer.print(e);

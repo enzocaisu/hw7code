@@ -1,4 +1,6 @@
 
+//Defines structure of a treeNode in a binary tree
+//Output: (lambda ( op1 op2 ) (if op1 val (if op2 left right)))
 (define treeNode
     (lambda (val left right)
         (lambda (op1 op2)
@@ -8,6 +10,9 @@
         )
     )
 )
+
+//Creates a node according to binary tree structure.
+
 
 (define node
     (lambda (x)

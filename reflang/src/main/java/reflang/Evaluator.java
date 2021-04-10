@@ -162,6 +162,7 @@ public class Evaluator implements Visitor<Value> {
 	public Value visit(RefExp e, Env env) { // New for reflang
 		Exp value_exp = e.value_exp();
 		Value value = (Value) value_exp.accept(this, env);
+		System.out.println("Ref exp reached!");
 		return heap.ref(value);
 	}
 
