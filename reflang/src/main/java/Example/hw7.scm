@@ -11,8 +11,7 @@
 
 (define node
     (lambda (x)
-        (treeNode x (ref (list)) (ref (list))
-        )
+        (treeNode x (ref (list)) (ref (list)))
     )
 )
 
@@ -31,5 +30,11 @@
 (define right
     (lambda (node)
         (node #f #f)
+    )
+)
+
+(define add
+    (lambda (parent which child)
+        (set! (if which (left root) (right root)) child)
     )
 )
