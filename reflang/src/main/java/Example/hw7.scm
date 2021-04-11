@@ -44,4 +44,4 @@
     )
 )
 
-(define root (node 1))
+(define root (node 2))
